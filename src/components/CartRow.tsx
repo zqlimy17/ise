@@ -18,7 +18,7 @@ const CartRow: FC<CartRowProps> = ({ item, index }) => {
                 {(Math.round(item.price * 100) / 100).toFixed(2)}
             </td>
             <td>{quantity}</td>
-            <td>
+            <td className='total-price'>
                 {item.currency} {(quantity * item.price).toFixed(2)}
             </td>
         </tr>
