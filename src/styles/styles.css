@@ -1,1 +1,9 @@
-/* No CSS *//*# sourceMappingURL=styles.css.map */
+* {
+  outline: 1px solid gold;
+  outline-offset: -1px;
+}
+
+body {
+  background-color: #f4f3ed;
+}
+/*# sourceMappingURL=styles.css.map */

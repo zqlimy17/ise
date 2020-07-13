@@ -1,0 +1,10 @@
+@import "./colors";
+
+* {
+    outline: 1px solid gold;
+    outline-offset: -1px;
+}
+
+body {
+    background-color: $background;
+}
