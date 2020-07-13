@@ -7,7 +7,7 @@ import GridLoader from "react-spinners/GridLoader";
 
 const App: FC = () => {
     const [products, setProducts] = useState<object[]>();
-    const [cart, setCart] = useState(2);
+    const [cart, setCart] = useState<object[]>([]);
     const [loaded, setLoaded] = useState(false);
 
     useEffect(() => {
@@ -24,8 +24,9 @@ const App: FC = () => {
         setLoaded(true);
     };
 
-    const addToCart = () => {
+    const addToCart = (product: object) => {
         // add to cart
+        setCart((cart) => [...cart, product]);
     };
     return (
         <div className='App'>
@@ -33,7 +34,7 @@ const App: FC = () => {
                 products!.map((product: any, index: number) => {
                     return (
                         <div key={index}>
-                            <Product product={product} />
+                            <Product product={product} addToCart={addToCart} />
                         </div>
                     );
                 })
@@ -54,7 +55,7 @@ const App: FC = () => {
                         {cart ? (
                             <span>
                                 {" "}
-                                - {cart} item{cart > 1 ? "s" : ""}
+                                - {cart.length} item{cart.length > 1 ? "s" : ""}
                             </span>
                         ) : (
                             ""
