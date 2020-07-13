@@ -1,16 +1,11 @@
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 
-interface ProductInterface {
-    product: {
-        image: string;
-        price: number;
-        currency: string;
-        name: string;
-    };
+interface ProductProps {
+    product: ProductType;
     addToCart: (arg: object) => void;
 }
 
-const Product: FC<ProductInterface> = ({ product, addToCart }) => {
+const Product: FC<ProductProps> = ({ product, addToCart }) => {
     return (
         <div>
             <img src={product.image} alt={product.name} />

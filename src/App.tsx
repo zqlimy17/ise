@@ -4,6 +4,7 @@ import axios from "axios";
 import "./styles/styles.css";
 
 import GridLoader from "react-spinners/GridLoader";
+import Cart from "./components/Cart";
 
 const App: FC = () => {
     const [products, setProducts] = useState<object[]>();
@@ -13,7 +14,7 @@ const App: FC = () => {
     useEffect(() => {
         setTimeout(() => {
             fetchProducts();
-        }, 3000);
+        }, 50);
     }, []);
 
     const fetchProducts = async () => {
@@ -28,6 +29,9 @@ const App: FC = () => {
         // add to cart
         setCart((cart) => [...cart, product]);
     };
+
+    const removeFromCart = () => {};
+
     return (
         <div className='App'>
             {loaded ? (
@@ -61,6 +65,7 @@ const App: FC = () => {
                             ""
                         )}
                     </h1>
+                    <Cart cart={cart} />
                 </div>
             ) : (
                 ""
