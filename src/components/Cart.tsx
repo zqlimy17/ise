@@ -7,9 +7,10 @@ interface CartProps {
 
 const Cart: FC<CartProps> = ({ cart }) => {
     const [total, setTotal] = useState<number>();
+    const [change, setChange] = useState(true);
     useEffect(() => {
         getTotal();
-    });
+    }, [change]);
     const getTotal = (): void => {
         let result = 0;
         try {
@@ -45,7 +46,14 @@ const Cart: FC<CartProps> = ({ cart }) => {
                 </thead>
                 <tbody>
                     {cart.map((item: any, index: number) => {
-                        return <CartRow item={item} index={index} />;
+                        return (
+                            <CartRow
+                                item={item}
+                                index={index}
+                                change={change}
+                                setChange={setChange}
+                            />
+                        );
                     })}
                 </tbody>
                 <tfoot>

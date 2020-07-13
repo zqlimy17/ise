@@ -1,14 +1,20 @@
-import React, { FC, useState } from "react";
+import React, { FC, useState, useEffect } from "react";
 
 interface CartRowProps {
     item: ProductType;
     index: number;
+    change: boolean;
+    setChange: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const CartRow: FC<CartRowProps> = ({ item, index }) => {
-    const [quantity, setQuantity] = useState<number>(123);
+const CartRow: FC<CartRowProps> = ({ item, index, change, setChange }) => {
+    const [quantity, setQuantity] = useState<number>(1);
+    const selectQuantity = [1, 2, 3, 4, 5, 6, 7, 8, 10];
+    useEffect(() => {
+        setChange(!change);
+    }, []);
     return (
-        <tr>
+        <tr key={index}>
             <td>X</td>
             <td>
                 <img src={item.image} /> {item.name}
@@ -17,7 +23,22 @@ const CartRow: FC<CartRowProps> = ({ item, index }) => {
                 {item.currency}{" "}
                 {(Math.round(item.price * 100) / 100).toFixed(2)}
             </td>
-            <td>{quantity}</td>
+            <td>
+                <select
+                    onChange={(e) => {
+                        setQuantity(parseInt(e.target.value));
+                        setChange(!change);
+                    }}
+                >
+                    {selectQuantity.map((elem, x) => {
+                        return (
+                            <option value={elem} key={x}>
+                                {elem}
+                            </option>
+                        );
+                    })}
+                </select>
+            </td>
             <td className='total-price'>
                 {item.currency} {(quantity * item.price).toFixed(2)}
             </td>
