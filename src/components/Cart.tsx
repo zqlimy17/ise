@@ -3,9 +3,10 @@ import CartRow from "./CartRow";
 
 interface CartProps {
     cart: object[];
+    removeFromCart: (index: number) => void;
 }
 
-const Cart: FC<CartProps> = ({ cart }) => {
+const Cart: FC<CartProps> = ({ cart, removeFromCart }) => {
     const [total, setTotal] = useState<number>();
     const [change, setChange] = useState(true);
     useEffect(() => {
@@ -45,16 +46,16 @@ const Cart: FC<CartProps> = ({ cart }) => {
                     </tr>
                 </thead>
                 <tbody>
-                    {cart.map((item: any, index: number) => {
-                        return (
-                            <CartRow
-                                item={item}
-                                index={index}
-                                change={change}
-                                setChange={setChange}
-                            />
-                        );
-                    })}
+                    {cart.map((item: any, index: number) => (
+                        <CartRow
+                            key={index}
+                            item={item}
+                            index={index}
+                            change={change}
+                            setChange={setChange}
+                            removeFromCart={removeFromCart}
+                        />
+                    ))}
                 </tbody>
                 <tfoot>
                     <tr>

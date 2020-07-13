@@ -26,11 +26,14 @@ const App: FC = () => {
     };
 
     const addToCart = (product: object) => {
-        // add to cart
         setCart((cart) => [...cart, product]);
     };
 
-    const removeFromCart = () => {};
+    const removeFromCart = (index: number) => {
+        let temp = cart;
+        temp.splice(index, 1);
+        setCart([...temp]);
+    };
 
     return (
         <div className='App'>
@@ -65,7 +68,11 @@ const App: FC = () => {
                             ""
                         )}
                     </h1>
-                    {cart.length ? <Cart cart={cart} /> : ""}
+                    {cart.length > 0 ? (
+                        <Cart cart={cart} removeFromCart={removeFromCart} />
+                    ) : (
+                        ""
+                    )}
                 </div>
             ) : (
                 ""
