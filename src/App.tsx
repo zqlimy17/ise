@@ -56,7 +56,7 @@ const App: FC = () => {
                 <div>
                     <h1>
                         SHOPPING CART{" "}
-                        {cart ? (
+                        {cart.length ? (
                             <span>
                                 {" "}
                                 - {cart.length} item{cart.length > 1 ? "s" : ""}
@@ -65,7 +65,7 @@ const App: FC = () => {
                             ""
                         )}
                     </h1>
-                    <Cart cart={cart} />
+                    {cart.length ? <Cart cart={cart} /> : ""}
                 </div>
             ) : (
                 ""
