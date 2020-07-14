@@ -11,7 +11,7 @@ const Cart: FC<CartProps> = ({ cart, removeFromCart }) => {
     const [change, setChange] = useState(true);
     useEffect(() => {
         getTotal();
-    }, [change]);
+    }, [change, cart]);
     const getTotal = (): void => {
         let result = 0;
         try {
