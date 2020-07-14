@@ -1,12 +1,7 @@
 @import "./colors";
 
-* {
-    outline: 1px solid gold;
-    outline-offset: -1px;
-}
-
 .App {
-    margin: 25px auto;
+    margin: 25px auto 50px auto;
     width: 95%;
     max-width: 992px;
 }
@@ -51,10 +46,60 @@ body {
 
     .details {
         display: grid;
+        align-items: center;
         grid-template-columns: 1fr 1fr;
     }
 }
 
+.cart {
+    h2 {
+        text-align: center;
+    }
+
+    table {
+        width: 800px;
+        margin: 0 auto;
+        border: 3px solid $border;
+        border-bottom: 0;
+        border-spacing: 0;
+        font-weight: bold;
+
+        tr {
+            line-height: 40px;
+        }
+
+        th {
+            text-align: left;
+            border-bottom: 3px solid $border;
+            font-weight: normal;
+        }
+
+        td {
+            border-bottom: 3px solid $border;
+        }
+
+        img {
+            vertical-align: middle;
+            border: 2px solid $border;
+            max-width: 60px;
+            margin: 5px 0;
+        }
+    }
+
+    .delete-button {
+        display: block;
+        line-height: normal;
+        text-align: center;
+        margin: 0 auto;
+        border: 1px solid black;
+        width: 20px;
+        height: 20px;
+
+        &:hover {
+            background-color: $button;
+        }
+    }
+}
 
 .product {
     display: block;
@@ -93,7 +138,7 @@ body {
 }
 
 hr {
-    border: 4px solid $border;
+    border: 3px solid $border;
 }
 
 .loader {

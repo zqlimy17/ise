@@ -59,9 +59,8 @@ const Cart: FC<CartProps> = ({ cart, removeFromCart }) => {
                 </tbody>
                 <tfoot>
                     <tr>
-                        <td colSpan={5} style={{ textAlign: "right" }}>
-                            SGD {total?.toFixed(2)}
-                        </td>
+                        <td colSpan={4} />
+                        <td>SGD {total?.toFixed(2)}</td>
                     </tr>
                 </tfoot>
             </table>

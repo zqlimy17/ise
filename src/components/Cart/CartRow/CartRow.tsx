@@ -27,7 +27,7 @@ const CartRow: FC<CartRowProps> = ({
                     removeFromCart(index);
                 }}
             >
-                X {index}
+                <span className='delete-button'>x</span>
             </td>
             <td>
                 <img src={item.image} /> {item.name}

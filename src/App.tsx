@@ -12,10 +12,13 @@ const App: FC = () => {
     const [loaded, setLoaded] = useState(false);
 
     useEffect(() => {
-        setTimeout(() => {
-            fetchProducts();
-        }, 50);
+        fetchProducts();
+        setCart(JSON.parse(window.localStorage.getItem("cart") || ""));
     }, []);
+
+    useEffect(() => {
+        localStorage.setItem("cart", JSON.stringify(cart));
+    }, [cart]);
 
     const fetchProducts = async () => {
         let response = await axios.get(
@@ -61,8 +64,8 @@ const App: FC = () => {
             </div>
 
             {loaded ? (
-                <div>
-                    <h1>
+                <div className='cart'>
+                    <h2>
                         SHOPPING CART{" "}
                         {cart.length ? (
                             <span>
@@ -72,7 +75,7 @@ const App: FC = () => {
                         ) : (
                             ""
                         )}
-                    </h1>
+                    </h2>
                     {cart.length > 0 ? (
                         <Cart cart={cart} removeFromCart={removeFromCart} />
                     ) : (
