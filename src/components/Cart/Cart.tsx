@@ -1,5 +1,5 @@
 import React, { FC, useState, useEffect } from "react";
-import CartRow from "./CartRow";
+import CartRow from "./CartRow/CartRow";
 
 interface CartProps {
     cart: object[];

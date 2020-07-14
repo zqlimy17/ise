@@ -1,11 +1,28 @@
-* {
-  outline: 1px solid gold;
-  outline-offset: -1px;
-}
-
 body {
   width: 100%;
   background-color: #f4f3ed;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.product img {
+  border: 7px solid #dbdbdb;
+}
+
+.product p {
+  line-height: 0;
+}
+
+.product .product-name {
+  font-weight: 900;
+}
+
+.product button {
+  font-family: inherit;
+  background-color: #efb784;
+  color: white;
+  border: 0;
+  padding: 7px 12px;
+  letter-spacing: 0.5px;
 }
 
 .loader {

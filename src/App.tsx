@@ -1,10 +1,10 @@
 import React, { FC, useState, useEffect } from "react";
-import Product from "./components/Product";
+import Product from "./components/Product/Product";
 import axios from "axios";
 import "./styles/styles.css";
 
 import GridLoader from "react-spinners/GridLoader";
-import Cart from "./components/Cart";
+import Cart from "./components/Cart/Cart";
 
 const App: FC = () => {
     const [products, setProducts] = useState<object[]>();

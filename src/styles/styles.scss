@@ -1,14 +1,41 @@
 @import "./colors";
 
-* {
-    outline: 1px solid gold;
-    outline-offset: -1px;
-}
+// * {
+//     outline: 1px solid gold;
+//     outline-offset: -1px;
+// }
 
 body {
     width: 100%;
     background-color: $background;
+    font-family: Helvetica, Arial, sans-serif;
 }
+
+.product {
+    img {
+        border: 7px solid $border;
+    }
+
+    p {
+        line-height: 0;
+    }
+
+    .product-name {
+        font-weight: 900;
+    }
+
+    button {
+        font-family: inherit;
+        background-color: $button;
+        color: white;
+        border: 0;
+        padding: 7px 12px;
+        letter-spacing: 0.5px;
+    }
+
+}
+
+
 
 .loader {
     height: 80vh;
