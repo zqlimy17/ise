@@ -1,14 +1,84 @@
+* {
+  outline: 1px solid gold;
+  outline-offset: -1px;
+}
+
+.App {
+  margin: 25px auto;
+  width: 95%;
+  max-width: 992px;
+}
+
 body {
   width: 100%;
   background-color: #f4f3ed;
   font-family: Helvetica, Arial, sans-serif;
 }
 
+.container {
+  display: -ms-grid;
+  display: grid;
+  grid-auto-columns: 1fr 1.75fr 1fr;
+  grid-auto-rows: 1fr 1fr;
+  gap: 13px 20px;
+      grid-template-areas: "grid-1 grid-0 grid-2" "grid-3 grid-0 grid-4";
+  margin-bottom: 50px;
+}
+
+.container div {
+  overflow: hidden;
+}
+
+.container .grid-0 {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 2;
+  grid-area: grid-0;
+}
+
+.container .grid-1 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: grid-1;
+}
+
+.container .grid-2 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: grid-2;
+}
+
+.container .grid-3 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: grid-3;
+}
+
+.container .grid-4 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  grid-area: grid-4;
+}
+
+.container .details {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+}
+
+.product {
+  display: block;
+}
+
 .product img {
-  border: 7px solid #dbdbdb;
+  width: 100%;
+  outline: 7px solid #dbdbdb;
+  outline-offset: -7px;
 }
 
 .product p {
+  font-size: 0.875em;
   line-height: 0;
 }
 
@@ -17,12 +87,23 @@ body {
 }
 
 .product button {
+  font-size: 0.75em;
+  float: right;
   font-family: inherit;
   background-color: #efb784;
   color: white;
   border: 0;
-  padding: 7px 12px;
+  padding: 0.5em 0.75em;
   letter-spacing: 0.5px;
+}
+
+.product button:hover {
+  background-color: orange;
+  color: whitesmoke;
+}
+
+hr {
+  border: 4px solid #dbdbdb;
 }
 
 .loader {

@@ -37,19 +37,24 @@ const App: FC = () => {
 
     return (
         <div className='App'>
-            {loaded ? (
-                products!.map((product: any, index: number) => {
-                    return (
-                        <div key={index}>
-                            <Product product={product} addToCart={addToCart} />
-                        </div>
-                    );
-                })
-            ) : (
-                <div className='loader'>
-                    <GridLoader color={"#efb784"} />
-                </div>
-            )}
+            <div className='container'>
+                {loaded ? (
+                    products!.map((product: any, index: number) => {
+                        return (
+                            <div key={index} className={`grid-${index}`}>
+                                <Product
+                                    product={product}
+                                    addToCart={addToCart}
+                                />
+                            </div>
+                        );
+                    })
+                ) : (
+                    <div className='loader'>
+                        <GridLoader color={"#efb784"} />
+                    </div>
+                )}
+            </div>
 
             <div>
                 <hr />
