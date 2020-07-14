@@ -82,7 +82,7 @@ body {
             vertical-align: middle;
             border: 2px solid $border;
             max-width: 60px;
-            margin: 5px 0;
+            margin: 10px 0;
         }
     }
 
@@ -96,7 +96,7 @@ body {
         height: 20px;
 
         &:hover {
-            background-color: $button;
+            background-color: orange;
         }
     }
 }

@@ -96,7 +96,7 @@ body {
   vertical-align: middle;
   border: 2px solid #dbdbdb;
   max-width: 60px;
-  margin: 5px 0;
+  margin: 10px 0;
 }
 
 .cart .delete-button {
@@ -110,7 +110,7 @@ body {
 }
 
 .cart .delete-button:hover {
-  background-color: #efb784;
+  background-color: orange;
 }
 
 .product {
