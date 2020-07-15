@@ -3,23 +3,28 @@ import Product from "../Product";
 import { shallow } from "enzyme";
 import { data } from "../../../sample.json";
 
-// First Product
-const wrapper = shallow(<Product product={data[0]} addToCart={() => {}} />);
+let productNumber = 1;
+const wrapper = shallow(
+    <Product product={data[productNumber]} addToCart={() => {}} />
+);
+
 it("renders image", () => {
     const image = wrapper.find("img");
     const imagesrc: any = image.prop("src");
-    expect(imagesrc).toBe(data[0].image);
+    expect(imagesrc).toBe(data[productNumber].image);
 });
 
-it("render product name IPhone 7", () => {
+it("render product name", () => {
     const nameOfProduct = wrapper.find("div div div p").first().text();
-    expect(nameOfProduct).toBe(data[0].name);
+    expect(nameOfProduct).toBe(data[productNumber].name);
 });
 
-it("render price SGD 15.00", () => {
+it("render price", () => {
     const nameOfProduct = wrapper.find("div div div p").at(1).text();
     expect(nameOfProduct).toBe(
-        `${data[0].currency} ${parseInt(data[0].price).toFixed(2)}`
+        `${data[productNumber].currency} ${parseInt(
+            data[productNumber].price
+        ).toFixed(2)}`
     );
 });
 
