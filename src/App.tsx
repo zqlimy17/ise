@@ -13,16 +13,12 @@ const App: FC = () => {
 
     useEffect(() => {
         fetchProducts();
-        setCart(JSON.parse(window.localStorage.getItem("cart") || ""));
     }, []);
-
-    useEffect(() => {
-        localStorage.setItem("cart", JSON.stringify(cart));
-    }, [cart]);
 
     const fetchProducts = async () => {
         let response = await axios.get(
-            "http://s3.irvinsaltedegg.com.s3-ap-southeast-1.amazonaws.com/engineering-test/products.json"
+            "https://cors-anywhere.herokuapp.com/http://s3.irvinsaltedegg.com.s3-ap-southeast-1.amazonaws.com/engineering-test/products.json",
+            { headers: { "X-Requested-With": "XMLHttpRequest" } }
         );
         setProducts(response.data.data);
         setLoaded(true);
