@@ -61,17 +61,6 @@ const App: FC = () => {
 
             {loaded ? (
                 <div className='cart'>
-                    <h2>
-                        SHOPPING CART{" "}
-                        {cart.length ? (
-                            <span>
-                                {" "}
-                                - {cart.length} item{cart.length > 1 ? "s" : ""}
-                            </span>
-                        ) : (
-                            ""
-                        )}
-                    </h2>
                     {cart.length > 0 ? (
                         <Cart cart={cart} removeFromCart={removeFromCart} />
                     ) : (

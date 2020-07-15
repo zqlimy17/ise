@@ -33,8 +33,19 @@ const Cart: FC<CartProps> = ({ cart, removeFromCart }) => {
             setTotal(result);
         }
     };
+
     return (
         <div>
+            <h2>
+                SHOPPING CART{" "}
+                {cart.length ? (
+                    <span>
+                        - {cart.length} item{cart.length > 1 ? "s" : ""}
+                    </span>
+                ) : (
+                    ""
+                )}
+            </h2>
             <table id='cart-table'>
                 <thead>
                     <tr>
