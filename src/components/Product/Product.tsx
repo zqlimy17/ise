@@ -14,7 +14,9 @@ const Product: FC<ProductProps> = ({ product, addToCart }) => {
                     <p className='product-name'>{product.name}</p>
                     <p>
                         {product.currency}{" "}
-                        {(Math.round(product.price * 100) / 100).toFixed(2)}
+                        {(
+                            Math.round(parseInt(product.price) * 100) / 100
+                        ).toFixed(2)}
                     </p>
                 </div>
                 <div>

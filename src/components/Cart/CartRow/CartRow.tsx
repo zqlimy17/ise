@@ -34,7 +34,7 @@ const CartRow: FC<CartRowProps> = ({
             </td>
             <td>
                 {item.currency}{" "}
-                {(Math.round(item.price * 100) / 100).toFixed(2)}
+                {(Math.round(parseInt(item.price) * 100) / 100).toFixed(2)}
             </td>
             <td>
                 <select
@@ -53,7 +53,7 @@ const CartRow: FC<CartRowProps> = ({
                 </select>
             </td>
             <td className='total-price'>
-                {item.currency} {(quantity * item.price).toFixed(2)}
+                {item.currency} {(quantity * parseInt(item.price)).toFixed(2)}
             </td>
         </tr>
     );

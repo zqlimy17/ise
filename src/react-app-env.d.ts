@@ -2,7 +2,7 @@
 
 type ProductType = {
     image: string;
-    price: number;
+    price: string;
     currency: string;
     name: string;
 };
