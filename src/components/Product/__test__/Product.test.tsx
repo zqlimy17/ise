@@ -19,9 +19,9 @@ it("render product name", () => {
     expect(nameOfProduct).toBe(data[productNumber].name);
 });
 
-it("render price", () => {
-    const nameOfProduct = wrapper.find("div div div p").at(1).text();
-    expect(nameOfProduct).toBe(
+it("renders price", () => {
+    const priceOfProduct = wrapper.find("div div div p").at(1).text();
+    expect(priceOfProduct).toBe(
         `${data[productNumber].currency} ${parseInt(
             data[productNumber].price
         ).toFixed(2)}`

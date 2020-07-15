@@ -1,13 +1,5 @@
 import React, { FC, useState, useEffect } from "react";
 
-interface CartRowProps {
-    item: ProductType;
-    index: number;
-    change: boolean;
-    setChange: React.Dispatch<React.SetStateAction<boolean>>;
-    removeFromCart: (index: number) => void;
-}
-
 const CartRow: FC<CartRowProps> = ({
     item,
     index,
@@ -16,7 +8,7 @@ const CartRow: FC<CartRowProps> = ({
     removeFromCart,
 }) => {
     const [quantity, setQuantity] = useState<number>(1);
-    const selectQuantity = [1, 2, 3, 4, 5, 6, 7, 8, 10];
+    const selectQuantity = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     useEffect(() => {
         setChange(!change);
     }, []);
